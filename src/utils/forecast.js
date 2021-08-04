@@ -26,7 +26,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) { //remove all reponse
             callback('Unable to find location', undefined)
         } else {
-            callback(undefined, body.current.weather_descriptions[0] + ". It is currently " + body.current.temperature + " degrees out." + "\n\n\n" + body.attribution)
+            callback(undefined, body.current.weather_descriptions[0] + ". It is currently " + body.current.temperature + " degrees out." + "\n\n\n Timezone is " + body.location.timezone_id + "and observation time is at " + body.current.observation_time)
         }
     })
 
