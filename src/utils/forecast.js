@@ -26,9 +26,11 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) { //remove all reponse
             callback('Unable to find location', undefined)
         } else {
-            callback(undefined, body.current.weather_descriptions[0] + ". It is currently " + body.current.temperature + " degrees out.")
+            callback(undefined, body.current.weather_descriptions[0] + ". It is currently " + body.current.temperature + " degrees out." + "\n\n\n" + body.attribution)
         }
     })
+
+    
 }
 
 module.exports = forecast
